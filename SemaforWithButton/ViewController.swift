@@ -16,19 +16,30 @@ final class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
+        
+    
     enum SemaforColor {
             case red, yellow, green
         }
         
         var currentColor: SemaforColor = .red
     
+    override func viewDidLayoutSubviews() {
+        redSemafor.layer.cornerRadius = redSemafor.frame.width / 2
+        yellowSemafor.layer.cornerRadius = yellowSemafor.frame.width / 2
+        greenSemafor.layer.cornerRadius = greenSemafor.frame.width / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func semaforButtonDidTapped(_ sender: UIButton) {
+        
         redSemafor.alpha = 0.3
         yellowSemafor.alpha = 0.3
         greenSemafor.alpha = 0.3
+        
         switch currentColor {
             case .red:
                 redSemafor.alpha = 1

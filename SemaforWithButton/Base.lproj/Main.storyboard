@@ -24,7 +24,7 @@
                                 <rect key="frame" x="96" y="643" width="196" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aC-lcf">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aC-lcf">
                                         <rect key="frame" x="18" y="8" width="160" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -38,10 +38,19 @@
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="START">
+                                                    <attributes>
+                                                        <font key="NSFont" size="30" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
                                         <connections>
-                                            <action selector="semaforButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90x-UC-BP4"/>
+                                            <action selector="semaforButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tx8-fz-Uhm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -73,7 +82,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="AOi-aC-lcf" id="buU-AW-7sr"/>
+                        <outlet property="button" destination="AOi-aC-lcf" id="OZW-Rd-ctH"/>
                         <outlet property="greenSemafor" destination="H4Z-bE-A9T" id="kTq-P0-QrG"/>
                         <outlet property="redSemafor" destination="a3j-Ai-lsO" id="cqK-Bv-GOb"/>
                         <outlet property="yellowSemafor" destination="Zrf-11-Rau" id="mk3-hX-nRf"/>

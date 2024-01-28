@@ -15,8 +15,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var greenSemafor: UIView!
     
     @IBOutlet weak var button: UIButton!
-    
-        
+
     
     enum SemaforColor {
             case red, yellow, green
@@ -44,7 +43,7 @@ final class ViewController: UIViewController {
         switch currentColor {
             case .red:
                 redSemafor.alpha = 1
-                button.setTitle("NEXT", for: .normal)
+                button.setTitle("NEXT", for:.normal)
                 currentColor = .yellow
             case .yellow:
                 yellowSemafor.alpha = 1

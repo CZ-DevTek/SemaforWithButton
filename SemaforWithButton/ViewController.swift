@@ -28,6 +28,7 @@ final class ViewController: UIViewController {
         redSemafor.layer.cornerRadius = redSemafor.frame.width / 2
         yellowSemafor.layer.cornerRadius = yellowSemafor.frame.width / 2
         greenSemafor.layer.cornerRadius = greenSemafor.frame.width / 2
+        button.layer.cornerRadius = 12
     }
     
     override func viewDidLoad() {

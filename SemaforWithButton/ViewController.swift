@@ -7,52 +7,56 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
-    @IBOutlet weak var redSemafor: UIView!
-    
-    @IBOutlet weak var yellowSemafor: UIView!
-    
-    @IBOutlet weak var greenSemafor: UIView!
-    
-    @IBOutlet weak var button: UIButton!
 
+final class ViewController: UIViewController {
     
-    enum SemaforColor {
-            case red, yellow, green
-        }
-        
-        var currentColor: SemaforColor = .red
+    @IBOutlet weak var redLightView: UIView!
+    @IBOutlet weak var yellowLightView: UIView!
+    @IBOutlet weak var greenLightView: UIView!
     
-    override func viewDidLayoutSubviews() {
-        redSemafor.layer.cornerRadius = redSemafor.frame.width / 2
-        yellowSemafor.layer.cornerRadius = yellowSemafor.frame.width / 2
-        greenSemafor.layer.cornerRadius = greenSemafor.frame.width / 2
-        button.layer.cornerRadius = 12
-    }
+    @IBOutlet weak var startButton: UIButton!
+
+    private var currentLightColor = LightColor.red
+    private let lightIsOn = 1.0
+    private let lightIsOff = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startButton.layer.cornerRadius = 12
+        
+        redLightView.alpha = lightIsOff
+        yellowLightView.alpha = lightIsOff
+        greenLightView.alpha = lightIsOff
+        
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
     }
     
-    @IBAction func semaforButtonDidTapped(_ sender: UIButton) {
+    @IBAction func startButtonDidTapped() {
+        if startButton.currentTitle == "START" {
+            startButton.setTitle("NEXT", for: .normal)
+        }
         
-        redSemafor.alpha = 0.3
-        yellowSemafor.alpha = 0.3
-        greenSemafor.alpha = 0.3
-        
-        switch currentColor {
-            case .red:
-                redSemafor.alpha = 1
-                button.setTitle("NEXT", for:.normal)
-                currentColor = .yellow
-            case .yellow:
-                yellowSemafor.alpha = 1
-                currentColor = .green
-            case .green:
-                greenSemafor.alpha = 1
-                currentColor = .red
+        switch currentLightColor {
+        case .red:
+            greenLightView.alpha = lightIsOff
+            redLightView.alpha = lightIsOn
+            currentLightColor = .yellow
+        case .yellow:
+            redLightView.alpha = lightIsOff
+            yellowLightView.alpha = lightIsOn
+            currentLightColor = .green
+        case .green:
+            greenLightView.alpha = lightIsOn
+            yellowLightView.alpha = lightIsOff
+            currentLightColor = .red
         }
     }
 }
-
-
+extension ViewController {
+    private enum LightColor {
+        case red, yellow, green
+    }
+}

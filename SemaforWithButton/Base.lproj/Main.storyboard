@@ -39,26 +39,15 @@
                                     <constraint firstAttribute="height" secondItem="W6h-bh-wYC" secondAttribute="height" multiplier="3.72" id="st5-X7-xZO"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Go2-f4-kKV">
-                                <rect key="frame" x="132.33333333333331" y="784.66666666666663" width="165.33333333333331" height="53.333333333333371"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go2-f4-kKV">
+                                <rect key="frame" x="131.33333333333331" y="784" width="167.33333333333331" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Go2-f4-kKV" secondAttribute="height" multiplier="164:53" id="HeK-jG-aCt"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="START">
-                                            <attributes>
-                                                <font key="NSFont" size="36" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <state key="selected">
-                                    <attributedString key="attributedTitle"/>
-                                </state>
+                                <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="startButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCx-V8-Eb4"/>
                                 </connections>
